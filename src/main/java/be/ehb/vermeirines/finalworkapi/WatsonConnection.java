@@ -15,12 +15,13 @@ public class WatsonConnection {
 
     public WatsonConnection() {
         try {
-        IamOptions options = new IamOptions.Builder()
-                .apiKey("Rwdyc3jrMPi1QCVZPzDuPfi21hgoJDaCs26HrAYVsp2s")
-                .build();
-        assistant = new Assistant("2019-02-26", options);
-        assistant.setEndPoint("https://gateway-lon.watsonplatform.net/assistant/api");
-
+            if(assistant == null) {
+                IamOptions options = new IamOptions.Builder()
+                        .apiKey("Rwdyc3jrMPi1QCVZPzDuPfi21hgoJDaCs26HrAYVsp2s")
+                        .build();
+                assistant = new Assistant("2019-02-26", options);
+                assistant.setEndPoint("https://gateway-lon.watsonplatform.net/assistant/api");
+            }
         assistantID = "446db265-4c81-4cae-8291-41ca1ed8d972";
         CreateSessionOptions optionsSession = new CreateSessionOptions.Builder(assistantID).build();
         SessionResponse response = assistant.createSession(optionsSession).execute();
