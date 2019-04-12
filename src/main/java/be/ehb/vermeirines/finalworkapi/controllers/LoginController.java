@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:8000")
 @RequestMapping("/login")
 public class LoginController {
 
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("")
+    @PostMapping("")
     @ResponseBody
     public Long login (@RequestBody LoginForm loginForm) {
         User user = userRepository.findUserByUsernameEqualsAndPasswordEquals(loginForm.getUsername(), loginForm.getPassword());
