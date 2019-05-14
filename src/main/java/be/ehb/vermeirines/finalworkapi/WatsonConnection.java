@@ -1,4 +1,6 @@
 package be.ehb.vermeirines.finalworkapi;
+
+
 import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
 import com.ibm.watson.developer_cloud.assistant.v2.model.*;
 import com.ibm.watson.developer_cloud.service.exception.NotFoundException;
