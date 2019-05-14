@@ -43,15 +43,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.ibm.watson.developer_cloud</groupId>
             <artifactId>java-sdk</artifactId>
             <version>6.14.0</version>
             <scope>system</scope>
-            <systemPath>
-                C:/Users/Inès/Documents/java-sdk-6.14.0-jar-with-dependencies.jar
-            </systemPath>
-        </dependency>
+
+        </dependency>-->
     </dependencies>
 
     <build>
