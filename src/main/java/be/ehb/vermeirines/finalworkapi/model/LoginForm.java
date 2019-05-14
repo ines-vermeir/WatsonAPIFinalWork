@@ -4,6 +4,7 @@ public class LoginForm {
 
     private String username;
     private String password;
+    private String roomNumber;
 
     public String getUsername() {
         return username;
@@ -19,5 +20,13 @@ public class LoginForm {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
     }
 }

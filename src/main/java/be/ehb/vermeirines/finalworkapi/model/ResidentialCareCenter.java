@@ -1,11 +1,12 @@
 package be.ehb.vermeirines.finalworkapi.model;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class User {
+public class ResidentialCareCenter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -14,8 +15,11 @@ public class User {
     private String username;
     @NotNull
     private String password;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "residential_care_center_id")
+    private List<Resident> residents = new ArrayList<>();
 
-    public User(){
+    public ResidentialCareCenter(){
 
     }
 
@@ -41,5 +45,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Resident> getResidents() {
+        return residents;
+    }
+
+    public void setResidents(List<Resident> residents) {
+        this.residents = residents;
     }
 }
